@@ -1,37 +1,39 @@
+Idea:
 
-     ,-----.,--.                  ,--. ,---.   ,--.,------.  ,------.
-    '  .--./|  | ,---. ,--.,--. ,-|  || o   \  |  ||  .-.  \ |  .---'
-    |  |    |  || .-. ||  ||  |' .-. |`..'  |  |  ||  |  \  :|  `--, 
-    '  '--'\|  |' '-' ''  ''  '\ `-' | .'  /   |  ||  '--'  /|  `---.
-     `-----'`--' `---'  `----'  `---'  `--'    `--'`-------' `------'
-    ----------------------------------------------------------------- 
+Esta aplicacion sirve para asignar una geolocalizacion a cada evento
+
+Me muestra para cada año una lista de eventos
+
+Al seleccionar un evento, puedo ver la posición del evento. Posibilidades:
++ pinchar en el mapa, setea un nuevo sitio. Debo mandar para actualizar en la BD
++ si se ha modificado, puedo resetear
+
++--------------------------------------------------------------------+
+| Titulo                                                             |
+|                                                                    |
+| +-----------------------------+     +----------------------------+ |
+| |                             |     | Evento 1                 |^| |
+| |         Mapa                |     | Evento 2                 | | |
+| |                             |     | Evento 3                 | | |
+| |                             |     | Evento 4                 | | |
+| |                             |     | Evento 5                 |v| |
+| |                             |     +----------------------------+ |
+| |                             |     Evento 3                       |
+| |                             |     Posición anterior: xx / yy     |
+| |                             |     Nueva posición:    xx / yy     |
+| |                             |     [Acceptar] [Resetear]          |
+| +-----------------------------+                                    |
++--------------------------------------------------------------------+
+
+Urls:
+mapa                            enseña el mapa
+eventos/{aaaa}                  lista de eventos para el año aaaa
+posicion/{eventid}              devuelve la posicion en json
+posicion/{eventid}/{xx}/{yy}    setea la nueva posicion del evento
 
 
-Welcome to your Django project on Cloud9 IDE!
-
-Your Django project is already fully setup. Just click the "Run" button to start
-the application. On first run you will be asked to create an admin user. You can
-access your application from 'https://geotag-ogeorg.c9.io/' and the admin page from 
-'https://geotag-ogeorg.c9.io/admin'.
-
-## Starting from the Terminal
-
-In case you want to run your Django application from the terminal just run:
-
-1) Run syncdb command to sync models to database and create Django's default superuser and auth system
-
-    $ python manage.py syncdb
-
-2) Run Django
-
-    $ python manage.py runserver $IP:$PORT
-    
-## Support & Documentation
-
-Django docs can be found at https://www.djangoproject.com/
-
-You may also want to follow the Django tutorial to create your first application:
-https://docs.djangoproject.com/en/1.7/intro/tutorial01/
-
-Visit http://docs.c9.io for support, or to learn more about using Cloud9 IDE.
-To watch some training videos, visit http://www.youtube.com/user/c9ide
+Por hacer: 
+1) Enseñar el mapa
+2) view para devolver los eventos de un año
+3) integrar los eventos en la página del mapa
+4) 
